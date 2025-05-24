@@ -1,0 +1,510 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #0d0d0d;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  color: #facc15;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a.active,
+nav a:hover {
+  color: #fff;
+  background: #facc15;
+  color: #0d0d0d;
+}
+
+.github-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 10vw;
+  min-height: 60vh;
+}
+
+.content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.content .hello {
+  color: #facc15;
+  font-size: 18px;
+}
+
+.content h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.city {
+  color: #fff;
+}
+
+.content .desc {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img {
+  width: 600px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 60%;
+  border: 5px solid #facc15;
+  box-shadow: 0 0 30px 5px #facc15;
+  transition: transform 0.3s ease;
+}
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+section {
+  padding: 60px 10vw 30px 10vw;
+  border-bottom: 1px solid #222;
+}
+
+section h2 {
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+.project-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 250px;
+  color: #fff;
+}
+
+.skills-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.skills-list li {
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #facc15;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #181818;
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    padding: 40px 5vw;
+  }
+  .content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .photo {
+    margin-top: 30px;
+  }
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  section {
+    padding: 40px 5vw 20px 5vw;
+  }
+}
+.about {
+  background-color: #1a1a1a;
+  padding: 60px;
+  border-radius: 10px;
+  margin: 40px auto;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #facc15;
+  box-shadow: 0 0 20px #facc15;
+}
+
+.about-text {
+  max-width: 600px;
+  color: #fff;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-text hr {
+  width: 60px;
+  border: 2px solid #facc15;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Skills Section */
+.skills {
+  padding: 40px 60px;
+  color: #fff;
+}
+
+.skills h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.skills-tabs {
+  margin-bottom: 30px;
+}
+
+.skills-tabs button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #facc15;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.skills-tabs button.active {
+  background-color: #facc15;
+  color: black;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  border: 1px solid #facc15;
+  border-radius: 10px;
+  background-color: #121212;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  background-color: #292929;
+}
+
+.skill-card img {
+  width: 30px;
+  height: 30px;
+}
+
+.skill-card span {
+  font-size: 16px;
+}
+.skill-card .progress {
+  flex: 1;
+  height: 10px;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.about {
+  background-color: #1a1a1a;
+  padding: 60px;
+  border-radius: 10px;
+  margin: 40px auto;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #facc15;
+  box-shadow: 0 0 20px #facc15;
+}
+
+.about-text {
+  max-width: 600px;
+  color: #fff;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-text hr {
+  width: 60px;
+  border: 2px solid #facc15;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Skills Section */
+.skills {
+  padding: 40px 60px;
+  color: #fff;
+}
+
+.skills h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.skills-tabs {
+  margin-bottom: 30px;
+}
+
+.skills-tabs button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #facc15;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.skills-tabs button.active {
+  background-color: #facc15;
+  color: black;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  border: 1px solid #facc15;
+  border-radius: 10px;
+  background-color: #121212;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  background-color: #292929;
+}
+
+.skill-card img {
+  width: 30px;
+  height: 30px;
+}
+
+.skill-card span {
+  font-size: 16px;
+}
+.skill-card .progress {
+  flex: 1;
+  height: 10px;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.about-text p {
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.about-text p {
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-text {
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+}
+
+.fade-in-text:nth-child(1) { animation-delay: 0.2s; }
+.fade-in-text:nth-child(2) { animation-delay: 0.4s; }
+.fade-in-text:nth-child(3) { animation-delay: 0.6s; }
+.fade-in-text:nth-child(4) { animation-delay: 0.8s; }
+.fade-in-text:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animasi pop up untuk skill card */
+.pop-up {
+  opacity: 0;
+  transform: scale(0.7) translateY(40px);
+  animation: popUpSkill 0.6s forwards;
+}
+
+.skills-grid .skill-card:nth-of-type(1) { animation-delay: 0.1s; }
+.skills-grid .skill-card:nth-of-type(2) { animation-delay: 0.3s; }
+.skills-grid .skill-card:nth-of-type(3) { animation-delay: 0.5s; }
+.skills-grid .skill-card:nth-of-type(4) { animation-delay: 0.7s; }
+
+@keyframes popUpSkill {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* efek timbul/ glow saat hiver/tab */
+.skill-card{
+  transition: 
+  box-shadaw 0.3s cubic-bezier(.4,2,cubic-bezier)
+  transform 00.2s cubic-bezier(.4,2,cubic-bezier)
+  backgraund 0.2s;
+  background: #222;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.skill-card:hover,
+.skill-card:focus,
+.skill-card:active {
+  background-color: #292929;
+  box-shadow: 0 8px 32px #facc15, 0 2px 8px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.05);
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 60px; /* beri ruang agar konten tidak tertutup navbar */
+  }
+  header nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 2px solid #facc15;
+  }
+.github-icon {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 1000;
+}
+header {
+  position: relative;
+}
+}
