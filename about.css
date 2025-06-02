@@ -451,6 +451,8 @@ footer {
 .skills-grid .skill-card:nth-of-type(2) { animation-delay: 0.3s; }
 .skills-grid .skill-card:nth-of-type(3) { animation-delay: 0.5s; }
 .skills-grid .skill-card:nth-of-type(4) { animation-delay: 0.7s; }
+.skills-grid .skill-card:nth-of-type(5) { animation-delay: 0.9s; }
+.skills-grid .skill-card:nth-of-type(6) { animation-delay: 1.1s; }
 
 @keyframes popUpSkill {
   to {
