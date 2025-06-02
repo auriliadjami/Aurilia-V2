@@ -28,32 +28,35 @@
     <div class="content ">
       <p class="hello fade-in-text">Hello World, I'm</p>
       <h1 class="fade-in-text">Aurilia Djami</h1>
-      <h2 class="typing-text">junior <span class="city">web developer</span></h2>
+      <h2 class="typing-text">web developer</h2>
       <p class="desc fade-in-text">Welcome to My personal website. <span class="wave">👋🏻</span></p>
     </div>
   </main>
 
   <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const text = "junior web developer";
+  const texts = ["web developer", "front-end developer"];
   const typingTarget = document.querySelector('.typing-text');
+  let textIndex = 0;
   let i = 0;
   let isDeleting = false;
 
   function type() {
+    const currentText = texts[textIndex];
     if (!isDeleting) {
-      typingTarget.textContent = text.substring(0, i);
+      typingTarget.textContent = currentText.substring(0, i);
       i++;
-      if (i > text.length) {
+      if (i > currentText.length) {
         isDeleting = true;
         setTimeout(type, 1000); // Tunggu sebelum menghapus
         return;
       }
     } else {
-      typingTarget.textContent = text.substring(0, i);
+      typingTarget.textContent = currentText.substring(0, i);
       i--;
       if (i < 0) {
         isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length; // Ganti ke teks berikutnya
         setTimeout(type, 500); // Tunggu sebelum mengetik lagi
         return;
       }
